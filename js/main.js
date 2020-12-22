@@ -40,7 +40,7 @@
                 },
                 success: function(result) {
                     if(JSON.parse(result)){
-                        window.location.replace("main.php")
+                        window.location.replace("articles.php")
                     } else {
                         for(var i=0; i<input.length; i++) {
                             showValidate(input[i]);

@@ -1,13 +1,14 @@
 <?php 
     session_start();
     if(!isset($_SESSION["login"])){
-        echo $_SESSION["login"];
-        //header("location: index.php");
+        header("location: index.php");
     }
 ?>
+<link rel="stylesheet" type="text/css" href="css/menu.css">
+  <!--===============================================================================================-->
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-nav">
     <img src="images\ovec-removebg.png" alt="Logo" style="width:40px;">  
-    <a class="navbar-brand ml-3" href="#">ชื่อระบบ</a>
+    <a class="navbar-brand ml-3 title-name" href="#">ชื่อระบบ</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
@@ -15,13 +16,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link link-text" href="#">ข้อมูลครุภัณฑ์ </a>
+                <a class="nav-link link-text" href="articles.php">ข้อมูลครุภัณฑ์ </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link link-text" href="#">ข้อมูลบุคลากร</a>
+                <a class="nav-link link-text" href="peopleregis.php">ข้อมูลบุคลากร</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link link-text" href="#">ความร่วมมือกับสถาณประกอบการ</a>
+                <a class="nav-link link-text" href="company.php">ความร่วมมือกับสถาณประกอบการ</a>
             </li>
             <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -35,7 +36,7 @@
             </div>
             </li> -->
         </ul>
-        <span class="navbar-text">
+        <span class="navbar-text text-name">
             วิทยาลัยเทคนิคชลบุรี 
         </span>
         <span class="navbar-text">
