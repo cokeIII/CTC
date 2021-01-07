@@ -18,7 +18,7 @@
     
         $temp_dep_id = "1";//??
 
-        $json_art_instruction = implode("|",$art_instruction);
+        $json_art_instruction = implode(",",$art_instruction);
 
         $sql = "insert into articles 
         (
@@ -39,10 +39,33 @@
         )";
         $result = $connect->query($sql);
         if($result){
-            echo $result;
+            header("location: showArt.php");
         }
     } else if(!empty($_POST["update"])){
-        
+        $art_id = $_POST["art_id"];
+        $art_number = $_POST["art_number"];
+        $art_name = $_POST["art_name"];
+        $art_amount = $_POST["art_amount"];
+        $art_com = $_POST["art_com"];
+        $art_instruction = $_POST["art_instruction"];
+        $art_type = $_POST["art_type"];
+    
+        $temp_dep_id = "1";//??
+
+        $json_art_instruction = implode(",",$art_instruction);
+
+        $sql = "update articles set
+        art_number = '$art_number',
+        art_name = '$art_name',
+        art_amount = '$art_amount',
+        art_com = '$art_com',
+        art_instruction = '$json_art_instruction',
+        art_type = '$art_type'
+        where art_id = '$art_id'";
+        $result = $connect->query($sql);
+        if($result){
+            header("location: showArt.php");
+        }
     } else if(!empty($_POST["getRoom"])){
         $sql = "select art_id ,art_name from articles";
         $result = $connect->query($sql);
@@ -108,6 +131,13 @@
                 }
                 header("location: importArt.php?insert=1");
             }   
+        }
+    } else if(!empty($_GET["delArt"])){
+        $art_id = $_GET["art_id"];
+        $sql = "delete from articles where art_id = '$art_id'";
+        $result = $connect->query($sql);
+        if($result){
+            header("location: showArt.php");
         }
     }
     

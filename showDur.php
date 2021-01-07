@@ -12,6 +12,13 @@
 .icon-color{
     color: black;
 }
+.h-auto{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
 </style>
 
 <body>
@@ -30,7 +37,7 @@
         <div class="container">
             <div class="signup-content">
                 <div class="signup-img">
-                    <img src="images/2.jpg" alt="">
+                    <img src="images/2.jpg" alt="" class="h-auto">
                     <div class="signup-img-content">
                         <h2>ข้อมูลครุภัณฑ์</h2>
                         <p>วิทยาลัยเทคนิคชลบุรี</p>

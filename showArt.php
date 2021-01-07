@@ -12,6 +12,13 @@
 .icon-color{
     color: black;
 }
+.h-auto{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
 </style>
 
 <body>
@@ -27,7 +34,7 @@
         <div class="container">
             <div class="signup-content">
                 <div class="signup-img">
-                    <img src="images/2.jpg" alt="">
+                    <img src="images/2.jpg" alt="" class="h-auto">
                     <div class="signup-img-content">
                         <h2>ข้อมูลห้องปฏิบัติการ</h2>
                         <p>วิทยาลัยเทคนิคชลบุรี</p>
@@ -63,8 +70,8 @@
                                     <td><?php echo $row["art_instruction"]?></td>
                                     <td><?php echo $row["art_type"]?></td>
                                     <td><?php echo $row["dep_id"]?></td>
-                                    <td><button class="btn btn-warning"><a href="editArt.php?art_id=<?php echo $row["art_id"]?>"><i class="icon-color fa fa-pencil-square"></i></a></button></td>
-                                    <td><button class="btn btn-danger"><a href="sql.php?art_id=<?php echo $row["art_id"]?>?delArt=true"><i class="icon-color fa fa-trash"></i></a></button></td>
+                                    <td><button class="btn btn-warning"><a href="formEditArt.php?art_id=<?php echo $row["art_id"]?>"><i class="icon-color fa fa-pencil-square"></i></a></button></td>
+                                    <td><button class="btn btn-danger"><a href="sqlArticles.php?art_id=<?php echo $row["art_id"]?>&delArt=true"><i class="icon-color fa fa-trash"></i></a></button></td>
                                 </tr>
                                 <?php
                                     }
